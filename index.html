@@ -12,3 +12,42 @@
         
 </body>
 </html>
+
+⭐ PART 3 — Configure Jenkins job
+Open your job → Configure → Build Triggers
+✔ Tick: GitHub hook trigger for GITScm polling
+Save.
+
+⭐ PART 4 — Test webhook
+Make any change to your GitHub project
+Push the code
+Jenkins WILL automatically start building
+DONE.
+
+⭐ PART 5 — Email Notification Setup (Beginner version)
+Step 1 — Setup Gmail App Password
+Open Google Account → Security
+Turn on 2-step verification
+Create App Password → choose “Other”
+Copy the 16-character password
+
+Step 2 — Jenkins Email settings
+In Jenkins:
+Manage Jenkins → Configure System
+Scroll to “E-mail Notification”
+Fill:
+SMTP Server → smtp.gmail.com
+Use SMTP Auth → ✔
+Username → your Gmail
+Password → (your app password) (16-character password that you got)
+Use SSL → ✔
+Port → 465
+Click Send test email
+If received → success.
+
+⭐ PART 6 — Add email to Job
+Open your job → Configure → Post-build actions:
+Add:
+Editable Email Notification
+Add recipients → Save → Build.
+DONE.
